@@ -13,6 +13,9 @@ import (
 type (
 	IPosition interface {
 		Create(ctx context.Context, in model.PositionCreateInput) (out model.PositionCreateOutput, err error)
+		Delete(ctx context.Context, id uint) error
+		Update(ctx context.Context, in model.PositionUpdateInput) error
+		GetList(ctx context.Context, in model.PositionGetListInput) (out *model.PositionGetListOutput, err error)
 	}
 )
 

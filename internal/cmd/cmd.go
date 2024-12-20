@@ -44,6 +44,8 @@ var (
 						controller.Admin.Delete, // 管理员
 						controller.Admin.Info,   // 查询当前管理员信息
 						controller.Rotation,     // 轮播图
+						controller.Role,         // 角色
+						controller.Permission,   // 权限
 						controller.Position,     // 手工位
 					)
 				})

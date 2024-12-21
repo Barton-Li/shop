@@ -3,6 +3,7 @@ package utility
 import (
 	"github.com/gogf/gf/v2/crypto/gmd5"
 	"github.com/gogf/gf/v2/os/gtime"
+	"github.com/gogf/gf/v2/util/gconv"
 	"math/rand"
 	"time"
 )
@@ -40,5 +41,10 @@ func GetRecent7Date() (dates []string) {
 func GetBefore7Date() (dates string) {
 	gt := gtime.New(time.Now())
 	dates = gt.Add(-gtime.D * 6).Format("Y-m-d")
+	return
+}
+func GetOrderNum() (number string) {
+	rand.Seed(time.Now().UnixNano())
+	number = gconv.String(time.Now().UnixNano()) + gconv.String(rand.Intn(1000))
 	return
 }

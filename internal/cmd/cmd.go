@@ -48,6 +48,8 @@ var (
 						controller.Role,         // 角色
 						controller.Permission,   // 权限
 						controller.Position,     // 手工位
+						controller.Order.List,   // 订单列表
+						controller.Order.Detail, // 订单详情
 					)
 				})
 			})

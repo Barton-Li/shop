@@ -44,12 +44,38 @@ var (
 						controller.Admin.Delete, // 管理员
 						controller.Admin.Info,   // 查询当前管理员信息
 						controller.Data,         // 数据统计
+						controller.Goods,        // 商品
 						controller.Rotation,     // 轮播图
 						controller.Role,         // 角色
 						controller.Permission,   // 权限
 						controller.Position,     // 手工位
 						controller.Order.List,   // 订单列表
 						controller.Order.Detail, // 订单详情
+					)
+				})
+			})
+			frontendToken, err := StartFrontendGToken()
+			if err != nil {
+				return err
+			}
+			s.Group("/frontend", func(group *ghttp.RouterGroup) {
+				group.Middleware(
+					service.Middleware().CORS,
+					service.Middleware().Ctx,
+					service.Middleware().ResponseHandler,
+				)
+				group.Bind(
+					controller.User.Register,
+				)
+				group.Group("/", func(group *ghttp.RouterGroup) {
+					err := frontendToken.Middleware(ctx, group)
+					if err != nil {
+						return
+					}
+					group.Bind(
+						controller.User.Info,
+						controller.User.UpdatePassword,
+						controller.Order.Add,
 					)
 				})
 			})

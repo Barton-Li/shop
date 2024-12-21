@@ -45,6 +45,8 @@ var (
 						controller.Admin.Info,   // 查询当前管理员信息
 						controller.Category,     // 栏目
 						controller.Data,         // 数据统计
+						controller.File,         //从0到1实现文件入库
+						controller.Upload,       //实现可跨项目使用的文件上云工具类
 						controller.Goods,        // 商品
 						controller.Rotation,     // 轮播图
 						controller.Role,         // 角色

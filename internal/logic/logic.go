@@ -5,10 +5,12 @@
 package logic
 
 import (
+	_ "shop/internal/logic/address"
 	_ "shop/internal/logic/admin"
 	_ "shop/internal/logic/bizctx"
 	_ "shop/internal/logic/category"
 	_ "shop/internal/logic/data"
+	_ "shop/internal/logic/file"
 	_ "shop/internal/logic/goods"
 	_ "shop/internal/logic/goods_options"
 	_ "shop/internal/logic/login"

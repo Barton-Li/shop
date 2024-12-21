@@ -43,10 +43,12 @@ var (
 						controller.Admin.Update, // 管理员
 						controller.Admin.Delete, // 管理员
 						controller.Admin.Info,   // 查询当前管理员信息
+						controller.Category,     // 栏目
 						controller.Data,         // 数据统计
 						controller.Goods,        // 商品
 						controller.Rotation,     // 轮播图
 						controller.Role,         // 角色
+						controller.GoodsOptions, // 商品规格
 						controller.Permission,   // 权限
 						controller.Position,     // 手工位
 						controller.Order.List,   // 订单列表

@@ -7,6 +7,8 @@ import (
 	"github.com/gogf/gf/v2/os/gcmd"
 	"shop/internal/consts"
 	"shop/internal/controller"
+	"shop/internal/controller/backend"
+	"shop/internal/controller/frontend"
 	"shop/internal/service"
 )
 
@@ -55,6 +57,10 @@ var (
 						controller.Position,     // 手工位
 						controller.Order.List,   // 订单列表
 						controller.Order.Detail, // 订单详情
+						backend.Article,         //文章管理&CMS
+						controller.Coupon,       //商品优惠券管理
+						controller.UserCoupon,   //商品优惠券管理
+						controller.Address,      //城市地址管理
 					)
 				})
 			})
@@ -80,6 +86,13 @@ var (
 						controller.User.Info,
 						controller.User.UpdatePassword,
 						controller.Order.Add,
+						controller.Collection,         //收藏
+						controller.Praise,             //收藏
+						controller.Comment,            //评论
+						controller.Cart,               //购物车
+						controller.OrderGoodsComments, //订单评价
+						frontend.Article,              //文章
+						frontend.Refund,               //售后
 					)
 				})
 			})
